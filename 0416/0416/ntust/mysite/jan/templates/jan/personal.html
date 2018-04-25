@@ -1,0 +1,19 @@
+<h1 class="text-center">個人檔案</h1>
+<div class="container-fluid">
+{% for r in user %}
+<h2>{{ r.name }}</h2>
+<table class="table">
+	<tr>
+		<th>姓名</th>
+            <td>{{ r.name }}</td>
+		<th>生日</th>
+			<td>{{ r.birthday }}</td>
+		<th>電話</th>
+			<td>{{ r.phone_number }}</td>
+		<th>地址</th>
+			<td>{{ r.address }}</td>
+		<th>電郵</th>
+			<td>{{ r.mail }}</td>
+	</tr>
+</table>
+{% endfor %}
