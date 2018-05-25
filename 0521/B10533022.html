@@ -1,0 +1,67 @@
+<body style="background-color:lightpink;" align="center">
+	<h1 style="color:powderblue;">CALCULATOR</h1>
+	<form name = "calculator">
+		<table  align="center">
+			<tr>
+				<td colspan="4">
+					<input type="text" id="display">
+				</td>
+			</tr>
+			<tr>
+				<td><input type="button" value="  7  " onclick="input('7')"></td>
+				<td><input type="button" value="  8  " onclick="input('8')"></td>
+				<td><input type="button" value="  9  " onclick="input('9')"></td>
+				<td><input type="button" value="  /  " onclick="input('/')"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="  4  " onclick="input('4')"></td>
+				<td><input type="button" value="  5  " onclick="input('5')"></td>
+				<td><input type="button" value="  6  " onclick="input('6')"></td>
+				<td><input type="button" value="  *  " onclick="input('*')"></td>
+			</tr>
+            <tr>
+				<td><input type="button" value="  1  " onclick="input('1')"></td>
+				<td><input type="button" value="  2  " onclick="input('2')"></td>
+				<td><input type="button" value="  3  " onclick="input('3')"></td>
+				<td><input type="button" value="  -  " onclick="input('-')"></td>
+			</tr>
+			<tr>
+               <td><input type="reset" id="clear" value="  c  " ></td>
+               <td><input type="button" value="  0  " onclick="input('0')"></td>
+               <td><input type="button" value="  =  " onclick="cal()"></td>
+               <td><input type="button" value="  +  " onclick="input('+')"></td>
+            </tr>
+        </table>
+	</form>
+	<h1 style="color:powderblue;">你幾分阿???</h1>
+      <input type="text" name="d1" id="d1"><br>
+      <input type="button" value="CHECK" onclick="grade()">
+      <h3 id="d2"></h3>
+</body>
+<script type="text/javascript">
+	function cal(){
+       document.getElementById("display").value=eval(document.getElementById("display").value)
+    }
+    function input(x){
+    	document.getElementById("display").value+=x;
+    }
+    function grade(){
+    var x = document.getElementById("d1").value
+    if (x >= 0 && x <= 100) {
+        if (x < 60) {
+          y = "你人生失敗";
+          document.getElementById('d2').style.color = 'red';
+      } else if (x == 100) {
+           y = "哇真厲害";
+          document.getElementById('d2').style.color = 'blue';
+      } else {
+          y = "我猜你及格了";
+          document.getElementById('d2').style.color = 'green';
+      }
+    } else {
+          y = "87嗎?";
+          document.getElementById('d2').style.color = 'purple';
+    }
+     document.getElementById("d2").innerHTML = y;
+}
+</script>
